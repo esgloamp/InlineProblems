@@ -26,6 +26,7 @@ public class SettingsComponent {
     private final JBCheckBox showErrors = new JBCheckBox(SettingsBundle.message("settings.showErrors"));
     private final JBCheckBox highlightErrors = new JBCheckBox(SettingsBundle.message("settings.highlightErrors"));
     private final JBCheckBox showErrorsInGutter = new JBCheckBox(SettingsBundle.message("settings.showErrorsInGutter"));
+    private final JBCheckBox useGrinningFaceInsteadOfErrorIcon = new JBCheckBox(SettingsBundle.message("settings.useGrinningFaceInsteadOfErrorIcon"));
 
     private final JBCheckBox showWarnings = new JBCheckBox(SettingsBundle.message("settings.showWarnings"));
     private final JBCheckBox highlightWarnings = new JBCheckBox(SettingsBundle.message("settings.highlightWarnings"));
@@ -74,7 +75,7 @@ public class SettingsComponent {
     private final JBTextField additionalInfoSeverities = new JBTextField();
     private final JBTextField additionalWarningSeverities = new JBTextField();
     private final JBTextField additionalWeakWarningSeverities = new JBTextField();
-    private  final JBTextField additionalErrorSeverities = new JBTextField();
+    private final JBTextField additionalErrorSeverities = new JBTextField();
 
     @Getter
     private final JPanel settingsPanel;
@@ -85,6 +86,7 @@ public class SettingsComponent {
         showErrors.setSelected(settingsState.isShowErrors());
         highlightErrors.setSelected(settingsState.isHighlightErrors());
         showErrorsInGutter.setSelected(settingsState.isShowErrorsInGutter());
+        useGrinningFaceInsteadOfErrorIcon.setSelected(settingsState.isUseGrinningFaceInsteadOfErrorIcon());
         errorTextColor.setSelectedColor(settingsState.getErrorTextColor());
         errorLabelBackgroundColor.setSelectedColor(settingsState.getErrorBackgroundColor());
         errorHighlightColor.setSelectedColor(settingsState.getErrorHighlightColor());
@@ -171,6 +173,7 @@ public class SettingsComponent {
                 .addComponent(showErrors)
                 .addComponent(highlightErrors)
                 .addComponent(showErrorsInGutter)
+                .addComponent(useGrinningFaceInsteadOfErrorIcon)
                 .addLabeledComponent(new JLabel(SettingsBundle.message("settings.errorTextColor")), errorTextColor)
                 .addLabeledComponent(new JLabel(SettingsBundle.message("settings.errorLabelBorderColor")), errorLabelBackgroundColor)
                 .addLabeledComponent(new JLabel(SettingsBundle.message("settings.errorLineHighlightColor")), errorHighlightColor)
@@ -315,6 +318,14 @@ public class SettingsComponent {
 
     public void setShowErrorsInGutter(boolean isSelected) {
         showErrorsInGutter.setSelected(isSelected);
+    }
+
+    public boolean isUseGrinningFaceInsteadOfErrorIcon() {
+        return useGrinningFaceInsteadOfErrorIcon.isSelected();
+    }
+
+    public void setUseGrinningFaceInsteadOfErrorIcon(boolean isSelected) {
+        useGrinningFaceInsteadOfErrorIcon.setSelected(isSelected);
     }
 
     public boolean isShowWarnings() {

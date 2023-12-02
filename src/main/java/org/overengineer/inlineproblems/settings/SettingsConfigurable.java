@@ -56,6 +56,7 @@ public class SettingsConfigurable implements Configurable {
                 state.isShowErrors() == settingsComponent.isShowErrors() &&
                 state.isHighlightErrors() == settingsComponent.isHighlightErrors() &&
                 state.isShowErrorsInGutter() == settingsComponent.isShowErrorsInGutter() &&
+                state.isUseGrinningFaceInsteadOfErrorIcon() == settingsComponent.isUseGrinningFaceInsteadOfErrorIcon() &&
 
                 state.getWarningTextColor().equals(settingsComponent.getWarningTextColor()) &&
                 state.getWarningBackgroundColor().equals(settingsComponent.getWarningLabelBackgroundColor()) &&
@@ -102,6 +103,7 @@ public class SettingsConfigurable implements Configurable {
         state.setShowErrors(settingsComponent.isShowErrors());
         state.setHighlightErrors(settingsComponent.isHighlightErrors());
         state.setShowErrorsInGutter(settingsComponent.isShowErrorsInGutter());
+        state.setUseGrinningFaceInsteadOfErrorIcon(settingsComponent.isUseGrinningFaceInsteadOfErrorIcon());
         state.setErrorTextColor(settingsComponent.getErrorTextColor());
         state.setErrorBackgroundColor(settingsComponent.getErrorLabelBackgroundColor());
         state.setErrorHighlightColor(settingsComponent.getErrorHighlightColor());
@@ -164,6 +166,7 @@ public class SettingsConfigurable implements Configurable {
         settingsComponent.setShowErrors(state.isShowErrors());
         settingsComponent.setHighlightErrors(state.isHighlightErrors());
         settingsComponent.setShowErrorsInGutter(state.isShowErrorsInGutter());
+        settingsComponent.setUseGrinningFaceInsteadOfErrorIcon(state.isUseGrinningFaceInsteadOfErrorIcon());
         settingsComponent.setErrorTextColor(state.getErrorTextColor());
         settingsComponent.setErrorLabelBackgroundColor(state.getErrorBackgroundColor());
         settingsComponent.setErrorHighlightColor(state.getErrorHighlightColor());

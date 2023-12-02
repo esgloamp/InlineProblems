@@ -4,6 +4,7 @@ import com.intellij.icons.AllIcons;
 import com.intellij.lang.annotation.HighlightSeverity;
 import com.intellij.openapi.editor.Editor;
 import lombok.Getter;
+import org.overengineer.inlineproblems.Icons;
 import org.overengineer.inlineproblems.settings.SettingsState;
 
 import javax.swing.*;
@@ -35,8 +36,13 @@ public class DrawDetails {
             highlightColor = settings.getErrorHighlightColor();
             isDrawHighlighter = settings.isHighlightErrors();
             isDrawProblem = settings.isShowErrors();
-            if (settings.isShowErrorsInGutter())
-                icon = AllIcons.General.Error;
+            if (settings.isShowErrorsInGutter()) {
+                if (settings.isUseGrinningFaceInsteadOfErrorIcon()) {
+                    icon = Icons.grinningFace;
+                } else {
+                    icon = AllIcons.General.Error;
+                }
+            }
         }
         else if (severity >= HighlightSeverity.WARNING.myVal) {
             textColor = settings.getWarningTextColor();

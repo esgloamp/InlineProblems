@@ -31,6 +31,7 @@ public class SettingsState implements PersistentStateComponent<SettingsState> {
     private boolean showErrors = true;
     private boolean highlightErrors = false;
     private boolean showErrorsInGutter = false;
+    private boolean useGrinningFaceInsteadOfErrorIcon = false;
     private boolean showWarnings = true;
     private boolean highlightWarnings = false;
     private boolean showWarningsInGutter = false;
