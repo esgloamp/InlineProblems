@@ -77,7 +77,7 @@ public class InlineProblem {
     }
 
     private String getTextWithoutHtmlOrXml(String text) {
-        if (text.contains("<"))
+        if (text.contains("/>"))
             text = StringUtil.stripHtml(text, " ");
 
         if (text.contains("&"))
